@@ -13,7 +13,7 @@ export default class Asset extends Component {
   componentDidMount() {
     let id = this.props.match.params.id;
     this.setState({ id });
-    axios.get("http://167.99.133.71:5000/nfts/" + id).then((response) => {
+    axios.get("https://167.99.133.71:5000/nfts/" + id).then((response) => {
       if (response.data.length > 0) {
         const nfts = response.data;
         const name = response.data[0].name;
