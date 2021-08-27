@@ -11,10 +11,10 @@ function App() {
     <Router>
       <Navbar />
       <div class="container">
-        <Route path="/" exact component={Home} />
-        <Route path="/assets" exact component={NftList} />
-        <Route path="/create" exact component={CreateNft} />
-        <Route path="/asset/:id" exact component={Asset} />
+        <Route path={"https://saveourheirlooms.github.io" + "/"} exact component={Home} />
+        <Route path={"https://saveourheirlooms.github.io" + "/assets"} exact component={NftList} />
+        <Route path={"https://saveourheirlooms.github.io" + "/create"} exact component={CreateNft} />
+        <Route path={"https://saveourheirlooms.github.io" + "/asset/:id"} exact component={Asset} />
       </div>
     </Router>
   );
