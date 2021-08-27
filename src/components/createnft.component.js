@@ -156,7 +156,7 @@ export default class NftList extends Component {
     };
 
     axios
-      .post("http://167.99.133.71:5000/nfts/add", nft)
+      .post("https://167.99.133.71:5000/nfts/add", nft)
       .then((res) => console.log(res.data));
   }
 
