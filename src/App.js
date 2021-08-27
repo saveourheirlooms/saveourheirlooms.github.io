@@ -11,10 +11,10 @@ function App() {
     <Router>
       <Navbar />
       <div class="container">
-        <Route path="/" exact component={Home} />
-        <Route path="/assets" exact component={NftList} />
-        <Route path="/create" exact component={CreateNft} />
-        <Route path="/asset/:id" exact component={Asset} />
+        <Route path={process.env.PUBLIC_URL + "/"} exact component={Home} />
+        <Route path={process.env.PUBLIC_URL + "/assets"} exact component={NftList} />
+        <Route path={process.env.PUBLIC_URL + "/create"} exact component={CreateNft} />
+        <Route path={process.env.PUBLIC_URL + "/asset/:id"} exact component={Asset} />
       </div>
     </Router>
   );
