@@ -13,7 +13,7 @@ export default class NftList extends Component {
 
   componentDidMount() {
     setTimeout(async () => {
-      axios.get("https://167.99.133.71:5000/nfts/").then((response) => {
+      axios.get("https://heirloom-backend-hwggz.ondigitalocean.app/nfts/").then((response) => {
         if (response.data.length > 0) {
           const nfts = response.data;
           this.setState({ nfts });
