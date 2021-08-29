@@ -176,6 +176,8 @@ export default class Home extends Component {
                                                 color: "white",
                                                 fontWeight: "bolder",
                                             }}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             href="http://wiki.netseclab.mu.edu.tr/index.php?title=MSKU_Blockchain_Research_Group"
                                         >
                                             Our Webpage
