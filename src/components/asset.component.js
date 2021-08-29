@@ -63,7 +63,7 @@ export default class Asset extends Component {
                                             {this.state.name}
                                         </div>
                                         <div class="inner-nft-owner">
-                                            John Smith Collection
+                                            Collection
                                         </div>
                                         <div class="inner-nft-address">
                                             {this.state.hash}
@@ -116,22 +116,10 @@ export default class Asset extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div class="other-coll row">
-                            <div class="col">
-                                <div class="inner-nft-other mb-2">
-                                    John Smith Collection
-                                </div>
-                                <div class="row mt-4">
-                                    <SkeletonNft />
-                                    <SkeletonNft />
-                                    <SkeletonNft />
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <footer
-                    className=" text-center text-dark "
+                    className=" text-center text-dark fixed-bottom"
                     style={{
                         width: "100%",
                         background: "#343a40",

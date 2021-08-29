@@ -19,7 +19,7 @@ html {
     border-radius: 30px;
     margin: 25px;
     width: 100%;
-    height: 290px;
+    height: 330px;
     background: #343a40;
 }
 
@@ -30,6 +30,13 @@ html {
     font-size: 80px;
     color: white;
     text-align: center;
+}
+
+.how-div img {
+    margin-top: 10px;
+    width: 20%;
+    text-align: center;
+    border-radius: 20%;
 }
 
 .how-div h3 {

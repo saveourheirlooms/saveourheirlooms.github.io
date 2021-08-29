@@ -6,6 +6,7 @@ import NftList from "./components/nftlist.component";
 import CreateNft from "./components/createnft.component";
 import Asset from "./components/asset.component";
 import Home from "./components/home.component";
+
 function App() {
     return (
         <Router>

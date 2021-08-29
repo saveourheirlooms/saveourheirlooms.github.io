@@ -6,8 +6,8 @@ import Contract from "../abis/contract.json";
 
 export default class Navbar extends Component {
     async componentWillMount() {
-        await this.loadWeb3();
-        await this.loadBlockchainData();
+        //await this.loadWeb3();
+        //await this.loadBlockchainData();
     }
 
     constructor(props) {
@@ -16,6 +16,8 @@ export default class Navbar extends Component {
             account: "You should login with Metamask on Rinkeby Testnet.",
             contract: null,
         };
+        this.loadWeb3 = this.loadWeb3.bind(this);
+        this.loadBlockchainData = this.loadBlockchainData.bind(this);
     }
 
     async loadBlockchainData() {
@@ -35,13 +37,17 @@ export default class Navbar extends Component {
         if (window.ethereum) {
             window.web3 = new Web3(window.ethereum);
             await window.ethereum.enable();
+            console.log("girdim1");
         } else if (window.web3) {
             window.web3 = new Web3(window.web3.currentProvider);
+            console.log("girdim2");
         } else {
             window.alert(
                 "Non-Ethereum browser detected. You should consider trying MetaMask!"
             );
+            window.location.reload();
         }
+        this.loadBlockchainData();
     }
 
     render() {
@@ -134,7 +140,12 @@ export default class Navbar extends Component {
                         </li>
                         <li className="nav-item active">
                             <a className="nav-link">
-                                <i class="far fa-user-circle fa-2x"></i>
+                                <button
+                                    className="btn btn-light btn-sm"
+                                    onClick={this.loadWeb3}
+                                >
+                                    <i class="far fa-user-circle fa-2x"></i>
+                                </button>
                             </a>
                         </li>
                     </ul>

@@ -31,6 +31,10 @@ export default class NftList extends Component {
                     <br></br>
                     <br></br>
                     <br></br>
+                    <br></br>
+                    <div className="alert alert-info" role="alert">
+                        This is for testing purposes.
+                    </div>
                     <div class="mx-auto" style={{ width: "1080px" }}>
                         <div class="row">
                             <div class="row" style={{ marginTop: "100px" }}>
@@ -57,7 +61,6 @@ export default class NftList extends Component {
                                                         height={250}
                                                         width={250}
                                                         src={nft.image}
-                                                        alt="Card image cap"
                                                     />
                                                     <span
                                                         style={{
@@ -128,7 +131,7 @@ export default class NftList extends Component {
                 </div>
 
                 <footer
-                    className=" text-center text-dark fixed-bottom"
+                    className=" text-center text-dark "
                     style={{
                         width: "100%",
                         background: "#343a40",

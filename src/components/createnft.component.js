@@ -13,8 +13,8 @@ const client = new NFTStorage({ token: apiKey });
 
 export default class NftList extends Component {
     async componentWillMount() {
-        await this.loadBlockchainData();
-        await this.loadWeb3();
+        //await this.loadBlockchainData();
+        //await this.loadWeb3();
         this.setState({ isDisabled: false });
     }
 
@@ -44,6 +44,8 @@ export default class NftList extends Component {
         this.onChangeMetadata = this.onChangeMetadata.bind(this);
         this.onChangeContract = this.onChangeContract.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.loadWeb3 = this.loadWeb3.bind(this);
+        this.loadBlockchainData = this.loadBlockchainData.bind(this);
 
         this.state = {
             name: "",
@@ -64,6 +66,7 @@ export default class NftList extends Component {
     async loadWeb3() {
         if (window.ethereum) {
             window.web3 = new Web3(window.ethereum);
+
             await window.ethereum.enable();
         } else if (window.web3) {
             window.web3 = new Web3(window.web3.currentProvider);
@@ -71,7 +74,9 @@ export default class NftList extends Component {
             window.alert(
                 "Non-Ethereum browser detected. You should consider trying MetaMask!"
             );
+            window.location.reload();
         }
+        this.loadBlockchainData();
     }
 
     onChangeName(e) {
@@ -128,6 +133,7 @@ export default class NftList extends Component {
     async onSubmit() {
         this.setState({ isDisabled: true });
         this.setState({ loadingDisplay: "inline" });
+        await this.loadWeb3();
         const name = this.state.name;
         const desc = this.state.desc;
         const category = this.state.category;
@@ -204,6 +210,9 @@ export default class NftList extends Component {
                     <br></br>
                     <br></br>
                     <br></br>
+                    <div className="alert alert-info" role="alert">
+                        This is for testing purposes.
+                    </div>
                     <div class="mx-auto" style={{ width: "1080px" }}>
                         <h1 class="mb-sm-4 display-4 fw-light lh-sm fs-4 fs-lg-6 fs-xxl-7">
                             Create
@@ -245,26 +254,6 @@ export default class NftList extends Component {
                                     <input
                                         value={this.state.desc}
                                         onChange={this.onChangeDesc}
-                                        class="form-control input-fileName"
-                                        required
-                                    />
-                                    <small
-                                        id="projectName"
-                                        class="form-text text-muted"
-                                    >
-                                        General Name for your project
-                                    </small>
-                                </div>
-                                <div
-                                    class="form-group"
-                                    style={{ width: "420px" }}
-                                >
-                                    <label for="exampleInputName">
-                                        NFT Hash
-                                    </label>
-                                    <input
-                                        value={this.state.hash}
-                                        onChange={this.onChangeHash}
                                         class="form-control input-fileName"
                                         required
                                     />
@@ -406,7 +395,7 @@ export default class NftList extends Component {
                     <br></br>
                 </div>
                 <footer
-                    className=" text-center text-dark "
+                    className=" text-center text-dark"
                     style={{
                         width: "100%",
                         background: "#343a40",
