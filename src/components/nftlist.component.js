@@ -131,7 +131,7 @@ export default class NftList extends Component {
                 </div>
 
                 <footer
-                    className=" text-center text-dark "
+                    className=" text-center text-dark fixed-bottom"
                     style={{
                         width: "100%",
                         background: "#262e3d",
