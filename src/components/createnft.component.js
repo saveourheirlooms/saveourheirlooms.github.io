@@ -398,7 +398,7 @@ export default class NftList extends Component {
                     className=" text-center text-dark"
                     style={{
                         width: "100%",
-                        background: "#343a40",
+                        background: "#262e3d",
                     }}
                 >
                     <div class="">

@@ -50,7 +50,7 @@ export default class Home extends Component {
                                         <Link to="/assets">
                                             <button
                                                 type="button"
-                                                className="btn btn-secondary btn-lg"
+                                                className="btn btn-secondary btn-dark"
                                             >
                                                 Explore NFTs
                                             </button>
@@ -195,7 +195,7 @@ export default class Home extends Component {
                     className=" text-center text-dark "
                     style={{
                         width: "100%",
-                        background: "#343a40",
+                        background: "#262e3d",
                     }}
                 >
                     <div class="">

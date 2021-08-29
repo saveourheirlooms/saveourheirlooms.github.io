@@ -20,7 +20,7 @@ html {
     margin: 25px;
     width: 100%;
     height: 330px;
-    background: #343a40;
+    background: #222531;
 }
 
 .how-div i {
@@ -60,7 +60,7 @@ html {
 .how-outer-div {
     width: 100%;
     height: 300px;
-    background: #6c757d;
+    background: #262e3d;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
 }
@@ -68,7 +68,7 @@ html {
 .how-outer2-div {
     width: 100%;
     height: 300px;
-    background: #6c757d;
+    background: #262e3d;
     border-radius: 25px;
 }
 

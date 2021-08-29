@@ -122,7 +122,7 @@ export default class Asset extends Component {
                     className=" text-center text-dark fixed-bottom"
                     style={{
                         width: "100%",
-                        background: "#343a40",
+                        background: "#262e3d",
                     }}
                 >
                     <div class="">
