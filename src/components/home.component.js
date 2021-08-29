@@ -132,8 +132,8 @@ export default class Home extends Component {
                                     <span>
                                         Transactions and NFTs are securely
                                         stored on blockchain and IPFS. NFTs are
-                                        listed on the market. Supporters
-                                        accesses the market and buys NFT.
+                                        listed on the market. Supporters access
+                                        the market and buy NFT.
                                     </span>
                                 </div>
                                 <div class="col how-div">
@@ -157,14 +157,14 @@ export default class Home extends Component {
                         <div class="row">
                             <div class="how-outer-div">
                                 <h1 class="how-title">
-                                    We are MSKU Blockchain Research Group
+                                    We are the MSKU Blockchain Research Group
                                 </h1>
                             </div>
                             <div class="row how-inner">
                                 <div class="col how-div">
                                     <img src="https://media.discordapp.net/attachments/784152625662132235/881239398191087636/450px-MSKU-BlockchainResearchGroup.jpg"></img>
                                     <h3>
-                                        We strive to explore the potential of
+                                        We study to explore the potential of
                                         blockchain technology and develop
                                         applications.
                                     </h3>
