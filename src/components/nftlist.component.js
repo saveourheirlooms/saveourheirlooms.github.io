@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import SkeletonNft from "../skeletons/SkeletonNft";
 import axios from "axios";
 import "../App.css";
@@ -59,6 +58,7 @@ export default class NftList extends Component {
                                                         height={250}
                                                         width={250}
                                                         src={nft.image}
+                                                        alt=""
                                                     />
                                                     <span
                                                         style={{

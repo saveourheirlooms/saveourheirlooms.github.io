@@ -1,15 +1,9 @@
 import { Link } from "react-router-dom";
-import React, { Component, useEffect, useState } from "react";
-import SkeletonNft from "../skeletons/SkeletonNft";
-import axios from "axios";
+import React, { Component } from "react";
 import "../App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default class Home extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {}
 
     render() {
@@ -61,6 +55,7 @@ export default class Home extends Component {
                                     <img
                                         src="https://raw.githubusercontent.com/saveourheirlooms/heirloom/master/src/bg.png"
                                         className="img-fluid"
+                                        alt=""
                                     />
                                 </div>
                             </div>
@@ -162,7 +157,10 @@ export default class Home extends Component {
                             </div>
                             <div class="row how-inner">
                                 <div class="col how-div">
-                                    <img src="https://media.discordapp.net/attachments/784152625662132235/881239398191087636/450px-MSKU-BlockchainResearchGroup.jpg"></img>
+                                    <img
+                                        alt=""
+                                        src="https://media.discordapp.net/attachments/784152625662132235/881239398191087636/450px-MSKU-BlockchainResearchGroup.jpg"
+                                    ></img>
                                     <h3>
                                         We study to explore the potential of
                                         blockchain technology and develop
@@ -204,7 +202,7 @@ export default class Home extends Component {
                             {/* Section: Social media */}
                             <section className="mb-1">
                                 {/* Twitter */}
-                                <a
+                                <button
                                     className="btn btn-light  m-1"
                                     style={{
                                         fontFamily:
@@ -212,7 +210,7 @@ export default class Home extends Component {
                                     }}
                                 >
                                     Heirloom
-                                </a>
+                                </button>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a
                                     className="btn btn-outline-light btn-floating m-1"

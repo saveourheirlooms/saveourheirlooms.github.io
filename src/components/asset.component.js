@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import "../App.css";
-import SkeletonNft from "../skeletons/SkeletonNft";
 
 export default class Asset extends Component {
     constructor(props) {
@@ -52,6 +50,7 @@ export default class Asset extends Component {
                                 <img
                                     src={this.state.image}
                                     class="inner-nft-image"
+                                    alt="LOADING..."
                                 ></img>
                             </div>
                             <div class="col">

@@ -1,15 +1,12 @@
-import { Link } from "react-router-dom";
-import React, { Component, useEffect, useState } from "react";
-import SkeletonNft from "../skeletons/SkeletonNft";
+import React, { Component } from "react";
 import axios from "axios";
 import { NFTStorage, File } from "nft.storage";
 import Web3 from "web3";
 import Contract from "../abis/contract.json";
-const fs = require("fs");
 
-const apiKey =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDc2ZEE3OGFiMzUxMDM1Q2ViNDhhOTk3MkE3MkIyMzg1RmZEOGFGRmIiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTYyOTgzMjgzNjM3NSwibmFtZSI6ImhlaXJsb29tIn0.ZuYum8nD_OQdfbCkyCtrVU0Bi0WZyD5Kwe4e9M05Kk4";
-const client = new NFTStorage({ token: process.env.NFTSTORAGE_APIKEY });
+const client = new NFTStorage({
+    token: process.env.REACT_APP_NFTSTORAGE_APIKEY,
+});
 
 export default class NftList extends Component {
     async componentWillMount() {
@@ -83,22 +80,22 @@ export default class NftList extends Component {
         this.setState({ name: e.target.value });
     }
     onChangeDesc(e) {
-        this.state.desc = e.target.value;
+        this.setState({ desc: e.target.value });
     }
     onChangeHash(e) {
-        this.state.hash = e.target.value;
+        this.setState({ hash: e.target.value });
     }
     onChangePrice(e) {
-        this.state.price = e.target.value;
+        this.setState({ price: e.target.value });
     }
     onChangeCategory(e) {
-        this.state.category = e.target.value;
+        this.setState({ category: e.target.value });
     }
     onChangeMetadata(e) {
-        this.state.metadata = e.target.value;
+        this.setState({ metadata: e.target.value });
     }
     onChangeContract(e) {
-        this.state.contract_address = e.target.value;
+        this.setState({ contract_address: e.target.value });
     }
 
     captureFile = (event) => {
@@ -151,8 +148,6 @@ export default class NftList extends Component {
                 console.log("Hash of the transaction: " + res);
             })
             .once("confirmation", (r) => {
-                this.setState({ isDisabled: false });
-                this.setState({ loadingDisplay: "none" });
                 console.log(this.state.hash);
                 console.log("success");
 
@@ -175,6 +170,8 @@ export default class NftList extends Component {
         axios
             .post(process.env.REACT_APP_BACKEND_URL_ADD, nft)
             .then((res) => console.log(res.data));
+        this.setState({ isDisabled: false });
+        this.setState({ loadingDisplay: "none" });
     }
 
     /*onSubmit(e){
@@ -212,7 +209,7 @@ export default class NftList extends Component {
                     </div>
                     <div class="mx-auto" style={{ width: "1080px" }}>
                         <h1 class="mb-sm-4 display-4 fw-light lh-sm fs-4 fs-lg-6 fs-xxl-7">
-                            Create
+                            Create an NFT
                         </h1>
                         <div class="row">
                             <form
@@ -238,7 +235,7 @@ export default class NftList extends Component {
                                         id="projectName"
                                         class="form-text text-muted"
                                     >
-                                        General Name for your project
+                                        General Name for your NFT
                                     </small>
                                 </div>
                                 <div
@@ -258,7 +255,7 @@ export default class NftList extends Component {
                                         id="projectName"
                                         class="form-text text-muted"
                                     >
-                                        General Name for your project
+                                        Description of your NFT
                                     </small>
                                 </div>
                                 <div
@@ -278,7 +275,7 @@ export default class NftList extends Component {
                                         id="projectName"
                                         class="form-text text-muted"
                                     >
-                                        General Name for your project
+                                        Image
                                     </small>
                                 </div>
                                 <div
@@ -299,7 +296,7 @@ export default class NftList extends Component {
                                         id="projectName"
                                         class="form-text text-muted"
                                     >
-                                        General Name for your project
+                                        Price of your NFT
                                     </small>
                                 </div>
                                 <div
@@ -319,7 +316,7 @@ export default class NftList extends Component {
                                         id="projectName"
                                         class="form-text text-muted"
                                     >
-                                        General Name for your project
+                                        Category of your NFT
                                     </small>
                                 </div>
                                 <div
@@ -339,7 +336,7 @@ export default class NftList extends Component {
                                         id="projectName"
                                         class="form-text text-muted"
                                     >
-                                        General Name for your project
+                                        Metadata your NFT
                                     </small>
                                 </div>
                                 <div
@@ -359,7 +356,7 @@ export default class NftList extends Component {
                                         id="projectName"
                                         class="form-text text-muted"
                                     >
-                                        General Name for your project
+                                        Contract address of your NFT
                                     </small>
                                 </div>
                                 <input
@@ -383,7 +380,7 @@ export default class NftList extends Component {
                                         role="status"
                                         aria-hidden="true"
                                     ></span>
-                                    <span class="sr-only">Loading...</span>
+                                    <span class="sr-only">Minting...</span>
                                 </button>
                             </form>
                         </div>
