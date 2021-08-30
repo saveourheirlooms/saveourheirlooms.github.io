@@ -389,7 +389,7 @@ export default class NftList extends Component {
                     <br></br>
                 </div>
                 <footer
-                    className=" text-center text-dark"
+                    className=" text-center text-dark "
                     style={{
                         width: "100%",
                         background: "#262e3d",
@@ -401,6 +401,16 @@ export default class NftList extends Component {
                             {/* Section: Social media */}
                             <section className="mb-1">
                                 {/* Twitter */}
+                                <button
+                                    className="btn btn-light  m-1"
+                                    style={{
+                                        fontFamily:
+                                            '"Sansita Swashed", cursive',
+                                    }}
+                                >
+                                    Heirloom
+                                </button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <a
                                     className="btn btn-outline-light btn-floating m-1"
                                     href="https://twitter.com/saveheirlooms"
@@ -408,7 +418,6 @@ export default class NftList extends Component {
                                 >
                                     <i className="fab fa-twitter" />
                                 </a>
-
                                 {/* Github */}
                                 <a
                                     className="btn btn-outline-light btn-floating m-1"
@@ -418,6 +427,16 @@ export default class NftList extends Component {
                                     role="button"
                                 >
                                     <i className="fab fa-github" />
+                                </a>
+                                {/* Gmails */}
+                                <a
+                                    className="btn btn-outline-light btn-floating m-1"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    href="mailto:saveourheirlooms@gmail.com"
+                                    role="button"
+                                >
+                                    <i className="fab fa-google" />
                                 </a>
                             </section>
                             {/* Section: Social media */}
