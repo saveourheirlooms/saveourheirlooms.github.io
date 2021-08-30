@@ -9,7 +9,7 @@ const fs = require("fs");
 
 const apiKey =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDc2ZEE3OGFiMzUxMDM1Q2ViNDhhOTk3MkE3MkIyMzg1RmZEOGFGRmIiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTYyOTgzMjgzNjM3NSwibmFtZSI6ImhlaXJsb29tIn0.ZuYum8nD_OQdfbCkyCtrVU0Bi0WZyD5Kwe4e9M05Kk4";
-const client = new NFTStorage({ token: apiKey });
+const client = new NFTStorage({ token: process.env.NFTSTORAGE_APIKEY });
 
 export default class NftList extends Component {
     async componentWillMount() {
@@ -173,10 +173,7 @@ export default class NftList extends Component {
         };
 
         axios
-            .post(
-                "https://heirloom-backend-hwggz.ondigitalocean.app/nfts/add",
-                nft
-            )
+            .post(process.env.REACT_APP_BACKEND_URL_ADD, nft)
             .then((res) => console.log(res.data));
     }
 

@@ -13,31 +13,29 @@ export default class Asset extends Component {
     componentDidMount() {
         let id = this.props.match.params.id;
         this.setState({ id });
-        axios
-            .get("https://heirloom-backend-hwggz.ondigitalocean.app/nfts/" + id)
-            .then((response) => {
-                if (response.data.length > 0) {
-                    const nfts = response.data;
-                    const name = response.data[0].name;
-                    const desc = response.data[0].desc;
-                    const hash = response.data[0].hash;
-                    const image = response.data[0].image;
-                    const price = response.data[0].price;
-                    const category = response.data[0].category;
-                    const metadata = response.data[0].metadata;
-                    const contract = response.data[0].contract;
-                    console.log(nfts);
-                    this.setState({ nfts });
-                    this.setState({ name });
-                    this.setState({ desc });
-                    this.setState({ hash });
-                    this.setState({ image });
-                    this.setState({ price });
-                    this.setState({ category });
-                    this.setState({ metadata });
-                    this.setState({ contract });
-                }
-            });
+        axios.get(process.env.REACT_APP_BACKEND_URL + id).then((response) => {
+            if (response.data.length > 0) {
+                const nfts = response.data;
+                const name = response.data[0].name;
+                const desc = response.data[0].desc;
+                const hash = response.data[0].hash;
+                const image = response.data[0].image;
+                const price = response.data[0].price;
+                const category = response.data[0].category;
+                const metadata = response.data[0].metadata;
+                const contract = response.data[0].contract;
+                console.log(nfts);
+                this.setState({ nfts });
+                this.setState({ name });
+                this.setState({ desc });
+                this.setState({ hash });
+                this.setState({ image });
+                this.setState({ price });
+                this.setState({ category });
+                this.setState({ metadata });
+                this.setState({ contract });
+            }
+        });
     }
 
     render() {

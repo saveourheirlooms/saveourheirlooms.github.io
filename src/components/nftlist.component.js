@@ -13,14 +13,12 @@ export default class NftList extends Component {
 
     componentDidMount() {
         setTimeout(async () => {
-            axios
-                .get("https://heirloom-backend-hwggz.ondigitalocean.app/nfts/")
-                .then((response) => {
-                    if (response.data.length > 0) {
-                        const nfts = response.data;
-                        this.setState({ nfts });
-                    }
-                });
+            axios.get(process.env.REACT_APP_BACKEND_URL).then((response) => {
+                if (response.data.length > 0) {
+                    const nfts = response.data;
+                    this.setState({ nfts });
+                }
+            });
         }, 2000);
     }
 
