@@ -8,6 +8,13 @@
 html {
     overflow-y: scroll;
 }
+
+.navbar-toggler{
+    position: absolute;
+    top: 16.5px;
+    right: 10px;
+}
+
 .nft-image {
     height: 450px;
     border: 1px solid #ddd;
